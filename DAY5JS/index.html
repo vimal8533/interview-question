@@ -1,1 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<p>Q1. Create a button , on click of which new Heading tag h1 should be added with text as "MERN stack" on the screen above button</p>
+<button onclick="change()">Click</button>
+<h1 class="Heading"></h1>
+  
+    <pre>
+        Ans:
+        var Heading =document.getElementsByClassName("Heading");
+var count=0;
+function  change(){
+    if(count%2==0){
+        Heading[0].innerHTML="MERN stack";
+        count++;
+    }else{
+        Heading[0].innerHTML="";
+        count--;
+    }
+   
+}
+    </pre>
+    <p>Q2. Write code to get 1st H1 element from a webpage using DOM</p>
+    <pre>
+        Ans:
+        let heading=document.getElementsByTagName("h1");
+        console.log(heading[0])
+    </pre>
+    <p>Q3. Write code to implement timer clock using JS -- display HH:MM:SS -- the time should keep updating every second</p>
+        
+    <h2>Start clock</h2>
+    <pre>
+        Ans:
+        var head2=document.getElementsByTagName("h2");
 
+        function clock(){
+            var time=new Date().toLocaleTimeString();
+        head2[0].innerHTML=time
+        setInterval(() => {
+            clock()
+        }, 1000);
+        }
+        
+        head2[0].addEventListener("click",clock );
+    </pre>
+    <p>Q4.Create an HTML page having content as Hello world and a button named Replace Text. When user will click on this button page content should be changed to "Welcome to Elevation academy"</p>
+    <h2>Hello World</h2>
+    <button onclick="changetext()"> Click to change</button>
+    <pre>Ans:
+        function changetext(){
+            head2[1].innerText="Welcome to Elevation academy";
+        }
+    </pre>
+    <p>Q5.Create an HTML page having content as Hello world and a button named "Hide Text." When user will click on this button hide the "Hello World" text</p>
+       <h2>Hello World</h2>
+       <button onclick="hidetext()">Hide Text</button>
+    <pre>
+        Ans:
+        function hidetext() {
+            head2[2].style.display="none";
+        }
+    </pre>
+    
+    <script src="./script.js"></script>
+</body>
+</html>
